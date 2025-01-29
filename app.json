@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ZapTop",
-    "slug": "ZapTop",
+    "slug": "zaptop",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,6 +23,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "260ac910-20f4-4e7e-8298-df7cf95829fa"
+      }
+    },
+    "owner": "holladredd"
   }
 }
