@@ -21,6 +21,13 @@ export default function RegisterScreen() {
         >
           <Text style={styles.registerButtonText}>Register</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.registerButton}
+          onPress={() => navigation.navigate("Home")}
+          // disabled={loading}
+        >
+          <Text style={styles.registerButtonText}>Go HOme</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
