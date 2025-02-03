@@ -7,9 +7,16 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { useAuth } from "../../context/AuthContext";
 
 export default function RegisterScreen() {
   const navigation = useNavigation();
+
+  const { register } = useAuth();
+
+  // Usage
+  // await register('John Doe', 'john@example.com', '+1234567890', 'password123');
+
   return (
     <SafeAreaView style={styles.container}>
       <View>

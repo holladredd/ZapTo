@@ -78,7 +78,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        {/* Quick Services */}{" "}
+        {/* Quick Services */}
         <View style={styles.servicesSection}>
           <Text style={styles.sectionTitle}>Quick Services</Text>
           <View style={styles.servicesGrid}>

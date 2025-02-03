@@ -1,13 +1,11 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
-import { Text } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface HeaderProps {
   title: string;
 }
-
 const Header = ({ title }: HeaderProps) => {
   const navigation = useNavigation();
 
@@ -30,8 +28,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 16,
     backgroundColor: "#fff",
-    // borderBottomWidth: 1,
-    // borderBottomColor: "#eee",
+    borderBottomWidth: 1,
+    borderBottomColor: "#eee",
   },
   backButton: {
     marginRight: 16,
