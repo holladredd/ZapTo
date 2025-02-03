@@ -131,10 +131,10 @@ export const recentBills = [
 export const quickServices = [
   { title: "Airtime", icon: "phone-plus" },
   { title: "Data Bundle", icon: "wifi" },
-  { title: "TV Sub", icon: "television" },
-  { title: "Electricity", icon: "flash" },
-  { title: "Education", icon: "school" },
-  { title: "Betting", icon: "gamepad-variant" },
+  // { title: "TV Sub", icon: "television" },
+  // { title: "Electricity", icon: "flash" },
+  // { title: "Education", icon: "school" },
+  // { title: "Betting", icon: "gamepad-variant" },
 ];
 
 export const transactions = [
@@ -166,9 +166,9 @@ export const transactions = [
 
 export const quickActions = [
   { title: "Edit Profile", icon: "account-edit", actions: "edit-profile" },
-  { title: "Bank Cards", icon: "credit-card", actions: "bank-cards" },
-  { title: "Security", icon: "shield-check", actions: "security" },
-  { title: "Support", icon: "headphones", actions: "support" },
+
+  { title: "Security", icon: "shield-check", actions: "Security" },
+  { title: "Support", icon: "headphones", actions: "Support" },
 ];
 
 export const settingsSections = [

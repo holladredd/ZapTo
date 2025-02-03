@@ -4,10 +4,12 @@ import { Platform, Dimensions } from "react-native";
 import Octicons from "react-native-vector-icons/Octicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import HomeScreen from "../pages/HomeScreen";
 import ProfileScreen from "../pages/ProfileScreen";
 import BillScreen from "../pages/BillScreen";
 import HistoryScreen from "../pages/HistoryScreen";
+import TasksScreen from "../pages/TasksScreen";
 
 const Tab = createBottomTabNavigator();
 const { width } = Dimensions.get("window");
@@ -73,6 +75,15 @@ export default function TabNavigation() {
           tabBarLabel: "Bills",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="newspaper-outline" color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Tasks"
+        component={TasksScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="star" color={color} size={size} />
           ),
         }}
       />

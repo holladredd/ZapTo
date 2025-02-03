@@ -5,11 +5,19 @@ import TabNavigation from "./TabNavigation";
 import LoginScreen from "../pages/auth/LoginScreen";
 import { useAuth } from "../context/AuthContext";
 import RegisterScreen from "../pages/auth/RegisterScreen";
-import EditProfile from "../pages/EditProfile";
+import EditProfile from "../pages/profile/EditProfile";
+import VideoTasks from "../pages/tasks/VideoTasks";
+import SurveyTasks from "../pages/tasks/SurveyTasks";
+import AppTasks from "../pages/tasks/AppTasks";
+import SocialTasks from "../pages/tasks/SocialTasks";
+import SecurityScreen from "../pages/profile/SecurityScreen";
+import SupportScreen from "../pages/profile/SupportScreen";
+// import SurveyTasks from "../pages/tasks/SurveyTasks";
+// import AppTasks from "../pages/tasks/AppTasks";
+// import SocialTasks from "../pages/tasks/SocialTasks";
 
 const AuthStack = createNativeStackNavigator();
 const AppStack = createNativeStackNavigator();
-
 // const AuthNavigator = () => {
 //   return (
 //     <AuthStack.Navigator screenOptions={{ headerShown: false }}>
@@ -39,6 +47,13 @@ const AuthNavigator = () => {
         component={EditProfile}
         options={{ title: "Edit Profile" }}
       />
+      <AuthStack.Screen name="Security" component={SecurityScreen} />
+      <AuthStack.Screen name="Support" component={SupportScreen} />
+      <AuthStack.Screen name="VideoTasks" component={VideoTasks} />
+      <AuthStack.Screen name="SurveyTasks" component={SurveyTasks} />
+      <AuthStack.Screen name="AppTasks" component={AppTasks} />
+      <AuthStack.Screen name="SocialTasks" component={SocialTasks} />
+
       <AuthStack.Screen name="Home" component={TabNavigation} />
     </AuthStack.Navigator>
   );

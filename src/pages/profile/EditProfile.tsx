@@ -11,7 +11,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 // import Header from "../components/Header";
 
 interface Profile {

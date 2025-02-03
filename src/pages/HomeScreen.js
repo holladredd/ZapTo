@@ -13,8 +13,11 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { LinearGradient } from "expo-linear-gradient";
 import { quickServices, transactions } from "../utils/Api";
+import { useNavigation } from "@react-navigation/native";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function HomeScreen() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#3730A3" />
@@ -48,17 +51,16 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.actionButtonsContainer}>
-          <TouchableOpacity style={styles.topButton}>
+          <TouchableOpacity
+            style={styles.topButton}
+            onPress={() => navigation.navigate("Tasks")}
+          >
             <LinearGradient
               colors={["#3730A3", "#4338CA"]}
               style={styles.gradientButton}
             >
-              <MaterialCommunityIcons
-                name="wallet-plus"
-                size={24}
-                color="#fff"
-              />
-              <Text style={styles.topButtonText}>Add Money</Text>
+              <AntDesign name="star" size={24} color="#FFD700" />
+              <Text style={styles.topButtonText}>Earn Points</Text>
             </LinearGradient>
           </TouchableOpacity>
 
@@ -78,7 +80,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        {/* Quick Services */}
+        {/* Quick Services
         <View style={styles.servicesSection}>
           <Text style={styles.sectionTitle}>Quick Services</Text>
           <View style={styles.servicesGrid}>
@@ -95,7 +97,7 @@ export default function HomeScreen() {
               </TouchableOpacity>
             ))}
           </View>
-        </View>
+        </View> */}
         {/* Recent Transactions */}
         <View style={styles.recentTransactions}>
           <View style={styles.sectionHeader}>
