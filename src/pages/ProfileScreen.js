@@ -37,7 +37,7 @@ export default function ProfileScreen() {
       >
         {/* Account Balance Section */}
         <View style={styles.balanceCard}>
-          <Text style={styles.balanceTitle}>Account Balance</Text>
+          <Text style={styles.balanceTitle}>Point Balance</Text>
           <View style={styles.pointsContainer}>
             <Text style={styles.topText}>-</Text>
             <Text style={styles.zapText}>Z</Text>
