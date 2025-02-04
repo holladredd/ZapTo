@@ -38,10 +38,14 @@ export default function HomeScreen() {
               <Text style={styles.userName}>John Doe</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.walletButton}>
-            <Ionicons name="wallet-outline" size={20} color="#fff" />
-            <Text style={styles.walletBalance}>₦25,480.00</Text>
-          </TouchableOpacity>
+          <View style={styles.walletButton}>
+            <View style={styles.pointsContainer}>
+              <Text style={styles.topText}>-</Text>
+              <Text style={styles.zapText}>Z</Text>
+              <Text style={styles.bottomText}>-</Text>
+              <Text style={styles.pointsText}>1,250</Text>
+            </View>
+          </View>
         </View>
       </LinearGradient>
 
@@ -59,18 +63,28 @@ export default function HomeScreen() {
               colors={["#3730A3", "#4338CA"]}
               style={styles.gradientButton}
             >
-              <AntDesign name="star" size={24} color="#FFD700" />
-              <Text style={styles.topButtonText}>Earn Points</Text>
+              <View style={styles.pointsContainer}>
+                <Text style={styles.topText}>-</Text>
+                <Text style={styles.zapText}>Z</Text>
+                <Text style={styles.bottomText}>-</Text>
+              </View>
+              <Text style={styles.topButtonText}>Earn Zap</Text>
             </LinearGradient>
           </TouchableOpacity>
 
           <View style={styles.bottomButtonsRow}>
-            <TouchableOpacity style={styles.bottomButton}>
+            <TouchableOpacity
+              style={styles.bottomButton}
+              onPress={() => navigation.navigate("Buy Data")}
+            >
               <MaterialCommunityIcons name="wifi" size={20} color="#94A3B8" />
               <Text style={styles.bottomButtonText}>Buy Data</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.bottomButton}>
+            <TouchableOpacity
+              style={styles.bottomButton}
+              onPress={() => navigation.navigate("Buy Airtime")}
+            >
               <MaterialCommunityIcons
                 name="phone-plus"
                 size={20}
@@ -141,6 +155,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 90, // Adds space above the tab bar
+    marginTop: 20,
   },
   headerGradient: {
     paddingTop: 20,
@@ -346,15 +361,40 @@ const styles = StyleSheet.create({
   walletButton: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.2)",
+    backgroundColor: "rgba(255,255,255,0.07)",
     padding: 8,
-    borderRadius: 12,
+    borderRadius: 16,
     gap: 8,
   },
-  walletBalance: {
+  pointsText: {
     color: "#fff",
-    fontWeight: "600",
     fontSize: 14,
+    marginLeft: 4,
+    fontWeight: "700",
+  },
+  pointsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    // gap: 4,
+  },
+  zapText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    zIndex: 1,
+  },
+  bottomText: {
+    color: "#FFD700",
+    marginLeft: -6,
+    fontSize: 20,
+    fontWeight: "lighter",
+  },
+  topText: {
+    color: "#FFD700",
+    marginTop: -6,
+    marginRight: -6,
+    fontSize: 20,
+    fontWeight: "lighter",
   },
   transactionPhone: {
     fontSize: 12,

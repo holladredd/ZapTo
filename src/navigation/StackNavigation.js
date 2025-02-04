@@ -12,6 +12,10 @@ import AppTasks from "../pages/tasks/AppTasks";
 import SocialTasks from "../pages/tasks/SocialTasks";
 import SecurityScreen from "../pages/profile/SecurityScreen";
 import SupportScreen from "../pages/profile/SupportScreen";
+import SplashScreen from "../pages/SplashScreen";
+import BuyDataScreen from "../pages/BuyDataScreen";
+import BuyAirtimeScreen from "../pages/BuyAirtimeScreen";
+import { SafeAreaView } from "react-native";
 // import SurveyTasks from "../pages/tasks/SurveyTasks";
 // import AppTasks from "../pages/tasks/AppTasks";
 // import SocialTasks from "../pages/tasks/SocialTasks";
@@ -39,23 +43,30 @@ const AppNavigator = () => {
 };
 const AuthNavigator = () => {
   return (
-    <AuthStack.Navigator screenOptions={{ headerShown: false }}>
-      <AuthStack.Screen name="Login" component={LoginScreen} />
-      <AuthStack.Screen name="SignUp" component={RegisterScreen} />
-      <AuthStack.Screen
-        name="edit-profile"
-        component={EditProfile}
-        options={{ title: "Edit Profile" }}
-      />
-      <AuthStack.Screen name="Security" component={SecurityScreen} />
-      <AuthStack.Screen name="Support" component={SupportScreen} />
-      <AuthStack.Screen name="VideoTasks" component={VideoTasks} />
-      <AuthStack.Screen name="SurveyTasks" component={SurveyTasks} />
-      <AuthStack.Screen name="AppTasks" component={AppTasks} />
-      <AuthStack.Screen name="SocialTasks" component={SocialTasks} />
-
-      <AuthStack.Screen name="Home" component={TabNavigation} />
-    </AuthStack.Navigator>
+    <SafeAreaView style={{ flex: 1 }}>
+      <AuthStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="Splash"
+      >
+        <AuthStack.Screen name="Splash" component={SplashScreen} />
+        <AuthStack.Screen name="Login" component={LoginScreen} />
+        <AuthStack.Screen name="SignUp" component={RegisterScreen} />
+        <AuthStack.Screen
+          name="edit-profile"
+          component={EditProfile}
+          options={{ title: "Edit Profile" }}
+        />
+        <AuthStack.Screen name="Security" component={SecurityScreen} />
+        <AuthStack.Screen name="Support" component={SupportScreen} />
+        <AuthStack.Screen name="VideoTasks" component={VideoTasks} />
+        <AuthStack.Screen name="SurveyTasks" component={SurveyTasks} />
+        <AuthStack.Screen name="AppTasks" component={AppTasks} />
+        <AuthStack.Screen name="SocialTasks" component={SocialTasks} />
+        <AuthStack.Screen name="Buy Data" component={BuyDataScreen} />
+        <AuthStack.Screen name="Buy Airtime" component={BuyAirtimeScreen} />
+        <AuthStack.Screen name="Home" component={TabNavigation} />
+      </AuthStack.Navigator>
+    </SafeAreaView>
   );
 };
 

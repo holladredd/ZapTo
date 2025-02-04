@@ -81,8 +81,12 @@ export default function VideoTasks() {
           </TouchableOpacity>
           <Text style={styles.headerTitle}>Video Tasks</Text>
           <View style={styles.pointsDisplay}>
-            <MaterialCommunityIcons name="star" size={24} color="#FFD700" />
-            <Text style={styles.pointsText}>{userPoints}</Text>
+            <View style={styles.pointsContainer}>
+              <Text style={styles.topText}>-</Text>
+              <Text style={styles.zapText}>Z</Text>
+              <Text style={styles.bottomText}>-</Text>
+              <Text style={styles.pointsText}>{userPoints}</Text>
+            </View>
           </View>
         </View>
       </LinearGradient>
@@ -177,7 +181,7 @@ const styles = StyleSheet.create({
   pointsDisplay: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "rgba(255,255,255,0.2)",
+    backgroundColor: "rgba(255,255,255,0.08)",
     padding: 8,
     borderRadius: 20,
   },
@@ -279,5 +283,29 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     color: "#10B981",
     fontWeight: "500",
+  },
+  pointsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    // gap: 4,
+  },
+  zapText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    zIndex: 1,
+  },
+  bottomText: {
+    color: "#FFD700",
+    marginLeft: -6,
+    fontSize: 20,
+    fontWeight: "lighter",
+  },
+  topText: {
+    color: "#FFD700",
+    marginTop: -6,
+    marginRight: -6,
+    fontSize: 20,
+    fontWeight: "lighter",
   },
 });

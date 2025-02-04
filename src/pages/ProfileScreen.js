@@ -38,10 +38,15 @@ export default function ProfileScreen() {
         {/* Account Balance Section */}
         <View style={styles.balanceCard}>
           <Text style={styles.balanceTitle}>Account Balance</Text>
-          <Text style={styles.balanceAmount}>₦25,480.00</Text>
+          <View style={styles.pointsContainer}>
+            <Text style={styles.topText}>-</Text>
+            <Text style={styles.zapText}>Z</Text>
+            <Text style={styles.bottomText}>-</Text>
+            <Text style={styles.pointsText}>1,250</Text>
+          </View>
           <TouchableOpacity style={styles.topUpButton}>
             <MaterialCommunityIcons name="wallet-plus" size={20} color="#fff" />
-            <Text style={styles.topUpButtonText}>Top Up Wallet</Text>
+            <Text style={styles.topUpButtonText}>Top Up Zap</Text>
           </TouchableOpacity>
         </View>
 
@@ -87,7 +92,10 @@ export default function ProfileScreen() {
           </View>
         ))}
 
-        <TouchableOpacity style={styles.logoutButton}>
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => navigation.navigate("Login")}
+        >
           <MaterialCommunityIcons name="logout" size={24} color="#EF4444" />
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
@@ -254,5 +262,36 @@ const styles = StyleSheet.create({
     color: "#EF4444",
     fontSize: 16,
     fontWeight: "600",
+  },
+  pointsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    // gap: 4,
+  },
+  pointsText: {
+    color: "#222222",
+    fontSize: 25,
+    marginLeft: 6,
+    fontWeight: "bold",
+  },
+  zapText: {
+    color: "#3730A3",
+    fontSize: 25,
+    fontWeight: "bold",
+    zIndex: 1,
+  },
+  bottomText: {
+    color: "#FFD700",
+    marginLeft: -8,
+    marginBottom: -2,
+    fontSize: 25,
+    fontWeight: "lighter",
+  },
+  topText: {
+    color: "#FFD700",
+    marginTop: -10,
+    marginRight: -10,
+    fontSize: 25,
+    fontWeight: "lighter",
   },
 });
